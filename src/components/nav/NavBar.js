@@ -1,32 +1,23 @@
-import { Link, useNavigate } from "react-router-dom"
+/******************************************************* */
+// this code is copied from the modified version of AppViews.js, 
+//    which customizes the links for product views in a similar way 
+
+
+import { EmployeeNav } from "./EmployeeNav"
+import { CustomerNav } from "./CustomerNav"
 import "./NavBar.css"
 
 export const NavBar = () => {
-    const navigate = useNavigate()
 
-    const kandyUser = localStorage.getItem("kandy_user")
-    const kandyUserObj = JSON.parse(kandyUser)
+    const localKandyUser = localStorage.getItem("kandy_user")
+    const kandyUserObject = JSON.parse(localKandyUser)
 
-    return (
-        <ul className="navbar">
-            <li>
-                <Link className="navbar__link" to="/locations">Locations</Link>
-            </li>
-            {
-                kandyUserObj.staff ?
-                    <li>
-                        <Link className="navbar__link" to="/products">Products</Link>
-                    </li>
-                    : ""
-            }
-            <Link className="navbar__link" to="/addProduct">Stonks</Link>
-            <li className="navbar__item navbar__logout">
-                <Link className="navbar__link" to="" onClick={() => {
-                    localStorage.removeItem("kandy_user")
-                    navigate("/", { replace: true })
-                }}>Logout</Link>
-            </li>
-
-        </ul>
-    )
+    if (kandyUserObject.staff) {
+        //return employee views 
+        return <EmployeeNav /> 
+    }
+    else {
+        //return customer views
+        return <CustomerNav /> 
+    }
 }
