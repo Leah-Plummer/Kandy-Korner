@@ -63,7 +63,6 @@ export const Products = ({searchTermState}) => {
                                 return <div className="product" key={products.id}>
                                     <h3>{products.name}</h3>
                                     <div>Price per unit: ${products.unitPrice}</div>
-                                    <div>Product Type: {products.productType.type}</div>
                                 </div>
                             }
                         )

@@ -1,9 +1,9 @@
-.products {
+.employees {
     display: flex;
     flex-direction: column;
 }
 
-.product {
+.employee {
     padding: 1rem;
     margin: 0.5rem;
     border: 1px solid green;
