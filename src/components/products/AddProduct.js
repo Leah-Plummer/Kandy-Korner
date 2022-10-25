@@ -45,7 +45,7 @@ export const AddProduct = () => {
         fetch("http://localhost:8088/products", fetchOptions)
             .then(res => res.json())
             .then(() => {
-                navigate("/products")
+               navigate("/products/") 
             })
     }
 

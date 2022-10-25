@@ -11,7 +11,11 @@ export const ProductSearch = ({ setterFunction }) => {
                     }
     
                 }
-            type="text" placeholder="What candy are you looking for?" />
+            type="text" id="searchField" placeholder="What candy are you looking for?" />
         </div>
         )
     }
+
+
+
+   
